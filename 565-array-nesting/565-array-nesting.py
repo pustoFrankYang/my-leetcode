@@ -1,6 +1,6 @@
 class Solution:
-    # it will form a loop! 
-    # and no outer element can enter the loop, wegens permutation!
+    # it will form a loop
+    # and no outer element can enter the loop, wegens permutation
     def arrayNesting(self, nums: List[int]) -> int:
         visited = [0] * len(nums)
         maxlen = currlen = 0
