@@ -5,9 +5,8 @@ WA
 '''
 class Solution:
     def validPalindrome(self, s: str) -> bool:
-        p = 0
-        q = len(s) - 1
-        deleted = 0
+        
+        
         def validPalindromeStrict(s):
             p = 0
             q = len(s) - 1
@@ -19,13 +18,14 @@ class Solution:
                 q -= 1
             return True
         
+        
+        p = 0
+        q = len(s) - 1
+        deleted = 0
         while p < q:
             if s[p] != s[q]:
-                if deleted:
-                    print(p, s[p], q, s[q], len(s))
-                    return False
-                else:
-                    return validPalindromeStrict(s[p+1:q+1]) or validPalindromeStrict(s[p:q])
+                #### it is hard to write without aux func... so
+                return validPalindromeStrict(s[p+1:q+1]) or validPalindromeStrict(s[p:q])
             p += 1
             q -= 1
         return True
