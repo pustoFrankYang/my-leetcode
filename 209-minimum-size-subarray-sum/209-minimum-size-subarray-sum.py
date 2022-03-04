@@ -15,12 +15,11 @@ class Solution:
             while q < len(nums) and currsum < target:
                 currsum += nums[q]
                 q += 1
-            if currsum >= target:  ####
+            if currsum >= target:  #### don't forget to update when no change on p is made
                 minlen = min(minlen, q - p)
             while p < q and currsum - nums[p] >= target:
                 currsum -= nums[p]
                 p += 1
                 minlen = min(minlen, q - p)
-                # print(p, q, currsum)
 
         return minlen if minlen < float('inf') else 0
