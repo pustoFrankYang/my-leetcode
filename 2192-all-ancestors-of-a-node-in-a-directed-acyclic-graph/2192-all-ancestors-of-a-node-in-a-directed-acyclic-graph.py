@@ -1,32 +1,24 @@
 class Solution:
+    # copied to test their speed
     def getAncestors(self, n: int, edges: List[List[int]]) -> List[List[int]]:
-        # begin point to end point, got from edges
-        u2v = [[] for _ in range(n)]
-        # ancestors alle
-        ans = [[] for _ in range(n)]
-        # cnt of prev points not processed
-        prevcnt = [0] * n
-        # queue of no-prev points
-        q = []
-        
-        for u, v in edges:
-            u2v[u].append(v)
-            prevcnt[v] += 1
-        for i in range(n):
-            if prevcnt[i] == 0:
-                q.append(i)
-        
-        # popped element u inject itself to ans[v]
-        while q:
-            u = q.pop(0)
-            for v in u2v[u]:  ## inject its ancestors to EVERY succeeders
-                for ances in ans[u]:
-                    if ances not in ans[v]:
-                        ans[v].append(ances)
-            for v in u2v[u]:
-                ans[v].append(u)
-                prevcnt[v] -= 1
-                if prevcnt[v] == 0:
-                    q.append(v)
-        
-        return [sorted(x) for x in ans]
+         
+        # Build graph, compute in degree and
+        # get direct parent for each node.   
+        ans = [set() for _ in range(n)]
+        in_degree = [0] * n
+        parent_to_kids = defaultdict(set)
+        for parent, kid in edges:
+            ans[kid].add(parent)
+            parent_to_kids[parent].add(kid)
+            in_degree[kid] += 1
+            
+        # Use Topological sort to get direct parent's all ancestors    
+        dq = deque([u for u, degree in enumerate(in_degree) if degree == 0])
+        while dq:
+            parent = dq.popleft()
+            for kid in parent_to_kids[parent]:
+                ans[kid].update(ans[parent])
+                in_degree[kid] -= 1
+                if in_degree[kid] == 0:
+                    dq.append(kid)
+        return [sorted(s) for s in  ans]    
