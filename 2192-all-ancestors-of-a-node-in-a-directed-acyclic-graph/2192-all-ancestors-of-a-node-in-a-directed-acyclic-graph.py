@@ -1,4 +1,5 @@
 class Solution:
+    # actually, similar with topological sort
     def getAncestors(self, n: int, edges: List[List[int]]) -> List[List[int]]:
         # begin point to end point, got from edges
         u2v = [[] for _ in range(n)]
