@@ -12,7 +12,6 @@ class Solution:
         for u, v in edges:
             u2v[u].append(v)
             prevcnt[v] += 1
-            # ans[v].add(u)
         for i in range(n):
             if prevcnt[i] == 0:
                 q.append(i)
