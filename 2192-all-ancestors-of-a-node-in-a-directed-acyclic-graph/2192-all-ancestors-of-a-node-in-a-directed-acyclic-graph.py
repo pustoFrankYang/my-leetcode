@@ -3,7 +3,7 @@ class Solution:
         # begin point to end point, got from edges
         u2v = [[] for _ in range(n)]
         # ancestors alle
-        ans = [set() for _ in range(n)]
+        ans = [set() for _ in range(n)]  #### use set() and update() to batch add unique faster!!!
         # cnt of prev points not processed
         prevcnt = [0] * n
         # queue of no-prev points
@@ -12,6 +12,7 @@ class Solution:
         for u, v in edges:
             u2v[u].append(v)
             prevcnt[v] += 1
+            # ans[v].add(u)
         for i in range(n):
             if prevcnt[i] == 0:
                 q.append(i)
@@ -20,8 +21,7 @@ class Solution:
         while q:
             u = q.pop(0)
             for v in u2v[u]:  ## inject its ancestors to EVERY succeeders
-                ans[v].update(ans[u])
-            for v in u2v[u]:
+                ans[v].update(ans[u])  #### update()
                 ans[v].add(u)
                 prevcnt[v] -= 1
                 if prevcnt[v] == 0:
