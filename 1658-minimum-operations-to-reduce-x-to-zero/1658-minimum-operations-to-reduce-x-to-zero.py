@@ -1,4 +1,5 @@
 class Solution:
+    # ohhh i am not fluent in sliding window
     def minOperations(self, nums: List[int], x: int) -> int:
         target = sum(nums) - x
         if target < 0:
