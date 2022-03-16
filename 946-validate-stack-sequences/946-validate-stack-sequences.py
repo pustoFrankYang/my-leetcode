@@ -8,4 +8,4 @@ class Solution:
             while stk and stk[-1] == popped[cntpop]:
                 stk.pop()
                 cntpop += 1
-        return cntpop == len(popped)
+        return not len(stk) # cntpop == len(popped)
