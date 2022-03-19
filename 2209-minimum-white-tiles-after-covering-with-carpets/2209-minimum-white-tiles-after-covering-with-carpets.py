@@ -1,13 +1,15 @@
 # ¡¡¡¡gesah! ... diese DP zu klug
 class Solution:
-    def minimumWhiteTiles(self, floor, k, L):
-        @lru_cache(None)
-        def dp(i, t):
-            if t < 0: return float("inf")
-            if i < 0: return 0
-            return min(dp(i - L, t - 1), dp(i - 1, t) + int(floor[i] == "1"))
-        
-        return dp(len(floor) - 1, k)
+    def minimumWhiteTiles(self, f: str, m: int, c: int) -> int:
+        n = len(f)
+        dp = [[0] * (m + 1) for _ in range(n + 1)]
+        for i in range(n):
+            dp[i][0] += dp[i-1][0] + (f[i] == '1')
+            if i + 1 >= c:
+                for j in range(1, m+1):
+                    dp[i][j] = min(dp[i-1][j] + (f[i] == '1'), dp[i-c][j-1])
+        return min(dp[n-1])
+            
 
 #     def minimumWhiteTiles(self, floor: str, numCarpets: int, carpetLen: int) -> int:
 #         n = len(floor)
