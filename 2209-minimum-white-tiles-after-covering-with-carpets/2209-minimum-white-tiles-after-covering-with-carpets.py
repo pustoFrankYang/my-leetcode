@@ -1,6 +1,5 @@
 # ¡¡¡¡gesah! ... diese DP zu klug
 class Solution:
-    
     def minimumWhiteTiles(self, floor, k, L):
         @lru_cache(None)
         def dp(i, t):
@@ -8,7 +7,7 @@ class Solution:
             if i < 0: return 0
             return min(dp(i - L, t - 1), dp(i - 1, t) + int(floor[i] == "1"))
         
-        return dp(len(floor) - 1, k)    
+        return dp(len(floor) - 1, k)
 
 #     def minimumWhiteTiles(self, floor: str, numCarpets: int, carpetLen: int) -> int:
 #         n = len(floor)
