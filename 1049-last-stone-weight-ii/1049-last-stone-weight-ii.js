@@ -15,6 +15,5 @@ var lastStoneWeightII = function(stones) {
             dp[j] = Math.max(dp[j], dp[j - stones[i]] + stones[i])
         }
     }
-    console.log(dp)
     return stones.reduce((a, b) => a + b, 0) - dp[target] - dp[target];
 };
