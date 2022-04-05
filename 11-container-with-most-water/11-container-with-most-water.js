@@ -11,17 +11,16 @@ var maxArea = function(h) {
     let ans = (R - L) * Math.min(h[L], h[R]);
     while (L < R) {
         let nl = L, nr = R;
-        if (h[L] < h[R]) {
+        if (h[L] < h[R]) {  // caution: each round move either L or R, not both
             while (nl < R && h[nl] <= h[L])
-            nl ++;
-        L = nl;
-        ans = Math.max(ans, (R - L) * Math.min(h[L], h[R]));
+                nl ++;
+            L = nl;
         } else {
             while (nr > L && h[nr] <= h[R])
-            nr --;
-        R = nr;
-        ans = Math.max(ans, (R - L) * Math.min(h[L], h[R]));
+                nr --;
+            R = nr;
         }
+        ans = Math.max(ans, (R - L) * Math.min(h[L], h[R]));
         
 //         console.log(L, R)
         
