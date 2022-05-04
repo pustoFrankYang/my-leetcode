@@ -12,7 +12,7 @@ class Solution:
         for n in nums:
             d2cnt[n] = d2cnt.get(n, 0) + 1
         for n in nums:
-            if k - n != n and d2cnt.get(k - n, 0) and d2cnt[n]:  # !! 
+            if k - n != n and d2cnt.get(k - n, 0) and d2cnt[n]:  # !! caution the and d2cnt[n]
                 d2cnt[k - n] -= 1
                 d2cnt[n] -= 1
                 ans += 1
