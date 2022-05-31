@@ -4,7 +4,8 @@
 #         for i in range(len(s) - k + 1):
 #             checker |= 1 << int(s[i:i + k], 2)
 #         return checker == 2 ** (2 ** k) - 1
-    
+
+# altho same complexity, this list ln checker saves time bigly
 class Solution:
     def hasAllCodes(self, s: str, k: int) -> bool:
         need = 2 ** k
