@@ -7,21 +7,15 @@ class Solution {
             cnt.set(s.charAt(i) - 'A', cnt.get(s.charAt(i) - 'A') + 1);
         int l = 0, r = k;
         int currmax = r - l;
-        int max_freq = Collections.max(cnt);
         while (r < s.length()) {
             // move r
             cnt.set(s.charAt(r) - 'A', cnt.get(s.charAt(r) - 'A') + 1);
-            max_freq = Math.max(max_freq, cnt.get(s.charAt(r) - 'A'));
             r ++;
             
-            // while l is invalid, move l
-            // !!!! optimization: use if instead of while
-            // cuz when you move l ++, then new window must be valid
-            // cuz what?????
-            if (max_freq + k < r - l) {
+            // while invalid, move l
+            while (l < r && Collections.max(cnt) + k < r - l) {
                 cnt.set(s.charAt(l) - 'A', cnt.get(s.charAt(l) - 'A') - 1);
                 l ++;
-                // max_freq = Collections.max(cnt);
             }
             currmax = Math.max(currmax, r - l);
         }
