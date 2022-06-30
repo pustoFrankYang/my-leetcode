@@ -1,4 +1,4 @@
-# Q457, runtime 76.53%
+# Q457, runtime 97.36%
 class Solution:
     def circularArrayLoop(self, nums: List[int]) -> bool:
         n = len(nums)
