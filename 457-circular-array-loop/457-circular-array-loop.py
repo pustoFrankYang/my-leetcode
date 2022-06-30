@@ -1,3 +1,4 @@
+# Q457, runtime 76.53%
 class Solution:
     def circularArrayLoop(self, nums: List[int]) -> bool:
         n = len(nums)
@@ -14,10 +15,8 @@ class Solution:
                     break
                 elif f == s:
                     # length
-                    if (f + nums[f]) % n != f:
-                        return True
-                    else:
-                        break
+                    if (f + nums[f]) % n != f: return True
+                    else: break
                         
                 f = (f + nums[f]) % n
                 visited[f] = 1
@@ -25,10 +24,8 @@ class Solution:
                     break
                 elif f == s:
                     # length
-                    if (f + nums[f]) % n != f:
-                        return True
-                    else:
-                        break
+                    if (f + nums[f]) % n != f: return True
+                    else: break
                     
                 s = (s + nums[s]) % n
         return False
