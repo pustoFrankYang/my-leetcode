@@ -8,7 +8,6 @@ class Solution:
             # no visited, let's check cycle
             f = s = i
             while nums[(f + nums[f]) % n] * nums[f] > 0:
-                print(f, s)
                 f = (f + nums[f]) % n
                 visited[f] = 1
                 if nums[(f + nums[f]) % n] * nums[f] < 0:
