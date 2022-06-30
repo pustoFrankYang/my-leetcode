@@ -9,23 +9,20 @@ class Solution:
             # no visited, let's check cycle
             f = s = i
             while nums[(f + nums[f]) % n] * nums[f] > 0:
-                f = (f + nums[f]) % n
-                visited[f] = 1
-                if nums[(f + nums[f]) % n] * nums[f] < 0:
-                    break
-                elif f == s:
-                    # length
-                    if (f + nums[f]) % n != f: return True
-                    else: break
-                        
-                f = (f + nums[f]) % n
-                visited[f] = 1
-                if nums[(f + nums[f]) % n] * nums[f] < 0:
-                    break
-                elif f == s:
-                    # length
-                    if (f + nums[f]) % n != f: return True
-                    else: break
+                endflg = False
+                for _ in range(2):
+                    f = (f + nums[f]) % n
+                    visited[f] = 1
+                    if nums[(f + nums[f]) % n] * nums[f] < 0:
+                        endflg = True
+                        break
+                    elif f == s:
+                        # length
+                        if (f + nums[f]) % n != f: return True
+                        else:
+                            endflg = True
+                            break    
+                if endflg: break
                     
                 s = (s + nums[s]) % n
         return False
