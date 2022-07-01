@@ -7,7 +7,7 @@
  *     Parent *Node
  * }
  */
-
+// Q1650m, runtime 86.73%
 func lowestCommonAncestor(p *Node, q *Node) *Node {
     // cuz val unique
     got := make(map[int]bool)
