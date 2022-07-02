@@ -26,6 +26,7 @@
  *     public List<NestedInteger> getList();
  * }
  */
+// Q339m, rumtime 85.22%
 class Solution {
     public int depthSum(List<NestedInteger> nestedList) {
         return dfs(nestedList, 1);
