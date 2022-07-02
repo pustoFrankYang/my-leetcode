@@ -1,4 +1,4 @@
-// Q1762m, runtime 99.90%
+// Q1762m, runtime 48.55%
 class Solution {
     public int[] findBuildings(int[] heights) {
         int currmax = 0;
