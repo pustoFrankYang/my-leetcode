@@ -1,4 +1,4 @@
-# Q2149m, runtime 23.20%
+# Q2149m, runtime 59.74%
 class Solution:
     def rearrangeArray(self, nums: List[int]) -> List[int]:
         p, q = -1, -1
