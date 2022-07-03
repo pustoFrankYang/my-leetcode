@@ -1,4 +1,4 @@
-# Q922e, runtime 33.78%
+# Q922e, runtime 83.70%
 class Solution:
     def sortArrayByParityII(self, nums: List[int]) -> List[int]:
         p, q = -1, -1
