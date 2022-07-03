@@ -1,4 +1,6 @@
+# Q376m, 70.30%
 class Solution:
+    # greedy
     # just start from 1st element and change direc whenever it can change
     # say A, B, C
     # if A == B, then ans(A,B,C) == ans(B,C)
