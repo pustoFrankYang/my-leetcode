@@ -1,4 +1,11 @@
+# Q135h, runtime 25.02%
 class Solution:
+    # holy shayise i've the hard ganz
+    # consider these 4 states:
+    # \   \  /    /\    \
+    #  \   \/    /  \    \
+    # all about max of cnt of consecutive ascending
+    # elements iter from left and from right
     def candy(self, ratings: List[int]) -> int:
         n = len(ratings)
         # record order of ascending from left & r.
