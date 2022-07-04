@@ -1,4 +1,4 @@
-# Q135h, runtime 25.02%
+# Q135h, runtime 28.80%
 class Solution:
     # holy shayise i've the hard ganz
     # consider these 4 states:
