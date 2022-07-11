@@ -1,18 +1,16 @@
-# ¡¡¡gesah
-# Q2333m, 9.18%
+from heapq import heapify, heappush, heappop
 class Solution:
     def minSumSquareDiff(self, nums1: List[int], nums2: List[int], k1: int, k2: int) -> int:
-        chance = k1 + k2
-        h = [-abs(nums1[i] - nums2[i]) for i in range(len(nums1))]
-        if -sum(h) < chance:
-            return 0
-        heapq.heapify(h)
+        heap = [ -abs(x-y) for x, y in zip(nums1, nums2)]
+        s = -sum(heap)
+        if k1+k2 >= s: return 0
+        delta = k1 + k2
+        heapify(heap)
         n = len(nums1)
-        while chance > 0:
-            curr = -heapq.heappop(h)
-            reducer = max(chance // n, 1)
-            curr -= reducer
-            chance -= reducer
-            heapq.heappush(h, -curr)
-        return sum(x**2 for x in h)
-                
+        while delta > 0:
+            d = -heappop(heap)
+            gap = max(delta//n, 1) if heap else delta
+            d -= gap
+            heappush(heap, -d)
+            delta -= gap
+        return sum(pow(e,2) for e in heap)
