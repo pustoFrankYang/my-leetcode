@@ -13,5 +13,5 @@ class Solution:
             curr -= reducer
             chance -= reducer
             heapq.heappush(h, -curr)
-        return sum(x**2 for x in h)
+        return sum(pow(x, 2) for x in h)
                 
