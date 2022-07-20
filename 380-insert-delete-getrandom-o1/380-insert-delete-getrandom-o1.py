@@ -18,7 +18,7 @@ class RandomizedSet:
             return False
         else:
             self.m[self.l[-1]] = self.m[val]
-            self.l[-1], self.l[self.m[val]] = self.l[self.m[val]], self.l[-1]
+            self.l[self.m[val]] = self.l[-1]
             del self.m[val]
             self.l.pop()
             return True
