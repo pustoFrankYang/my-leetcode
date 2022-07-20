@@ -1,4 +1,4 @@
-# Q380m, runtime 89.36%
+# Q380m, runtime 95.97%
 class RandomizedSet:
 
     def __init__(self):
