@@ -1,3 +1,4 @@
+# Q792m, runtime 27.60%
 class Solution:
     def numMatchingSubseq(self, s: str, words: List[str]) -> int:
         c2p = [[] for _ in range(26)]  # char to positions
