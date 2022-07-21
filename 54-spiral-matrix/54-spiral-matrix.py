@@ -1,4 +1,4 @@
-# Q54m, 15.56%
+# Q54m, 80.54%
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         m = len(matrix)
