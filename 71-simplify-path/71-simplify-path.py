@@ -1,3 +1,4 @@
+# Q71m, 32.59%
 class Solution:
     def simplifyPath(self, path: str) -> str:
         ans = []
