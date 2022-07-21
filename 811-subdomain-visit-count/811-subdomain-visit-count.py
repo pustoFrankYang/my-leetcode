@@ -1,3 +1,4 @@
+# Q811m, 62.80%
 class Solution:
     def subdomainVisits(self, cpdomains: List[str]) -> List[str]:
         m = {}
