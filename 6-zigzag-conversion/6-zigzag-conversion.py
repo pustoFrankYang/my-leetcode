@@ -1,4 +1,4 @@
-# Q6m, runtime 60.72%
+# Q6m, runtime 86.87%
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
         if numRows == 1:
