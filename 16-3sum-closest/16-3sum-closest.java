@@ -2,21 +2,20 @@
 // Q16m, runtime 5.22%
 class Solution {
     public int threeSumClosest(int[] nums, int target) {
-        int ans = nums[0] + nums[1] + nums[2];
-        int n = nums.length;
+        int diff = Integer.MAX_VALUE;
+        int sz = nums.length;
         Arrays.sort(nums);
-        for (int i = 0; i < n - 2 && ans != target; i ++) {
-            for (int j = i + 1; j < n - 1; j ++) {
+        for (int i = 0; i < sz && diff != 0; ++i) {
+            for (int j = i + 1; j < sz - 1; ++j) {
                 int complement = target - nums[i] - nums[j];
-                int idx = Arrays.binarySearch(nums, j + 1, n - 1, complement);
-                int hi = idx >= 0 ? idx : -idx;
-                int lo = hi - 1;
-                if (hi < n && Math.abs(complement - nums[hi]) < Math.abs(target - ans))
-                    ans = nums[i] + nums[j] + nums[hi];
-                if (lo < n && Math.abs(complement - nums[lo]) < Math.abs(target - ans))
-                    ans = nums[i] + nums[j] + nums[lo];
+                var idx = Arrays.binarySearch(nums, j + 1, sz - 1, complement);
+                int hi = idx >= 0 ? idx : ~idx, lo = hi - 1;
+                if (hi < sz && Math.abs(complement - nums[hi]) < Math.abs(diff))
+                    diff = complement - nums[hi];
+                if (lo > j && Math.abs(complement - nums[lo]) < Math.abs(diff))
+                    diff = complement - nums[lo];
             }
         }
-        return ans;
+        return target - diff;
     }
 }
