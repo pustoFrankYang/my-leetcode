@@ -3,7 +3,7 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-# Q86m, 
+# Q86m, 79.71%
 class Solution:
     def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:
         llead = ListNode(0, None)
@@ -27,6 +27,6 @@ class Solution:
             p = p.next
         llast.next = glead.next
         glast.next = None
-        if llead.next is None:
+        if llead.next is None:  # !!!caution
             llead.next = glead.next
         return llead.next
