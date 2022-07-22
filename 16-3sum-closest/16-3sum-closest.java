@@ -13,7 +13,7 @@ class Solution {
                 int lo = hi - 1;
                 if (hi < n && Math.abs(complement - nums[hi]) < Math.abs(target - ans))
                     ans = nums[i] + nums[j] + nums[hi];
-                if (lo < n && Math.abs(complement - nums[lo]) < Math.abs(target - ans))
+                if (lo > j && Math.abs(complement - nums[lo]) < Math.abs(target - ans))
                     ans = nums[i] + nums[j] + nums[lo];
             }
         }
