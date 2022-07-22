@@ -1,4 +1,4 @@
-// Q259m, runtime 8.14%
+// Q259m, runtime 96.66%
 class Solution {
     public int threeSumSmaller(int[] nums, int target) {
         int ans = 0;
@@ -8,6 +8,7 @@ class Solution {
             int l = i + 1, r = n - 1;
             while (l < r) {
                 int sum = nums[l] + nums[r];
+                //  find smaller, so always reduce r
                 if (sum >= target - nums[i]) {
                     r --;
                 } else {
