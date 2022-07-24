@@ -1,4 +1,4 @@
-# Q2347e, runtime
+# Q2347e, runtime 100.00%
 class Solution:
     def bestHand(self, ranks: List[int], suits: List[str]) -> str:
         ranks.sort()
