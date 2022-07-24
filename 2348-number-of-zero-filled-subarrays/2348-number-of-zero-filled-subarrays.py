@@ -1,4 +1,4 @@
-# Q2348m, runtime
+# Q2348m, runtime 20.00%
 class Solution:
     def zeroFilledSubarray(self, nums: List[int]) -> int:
         metas = []
