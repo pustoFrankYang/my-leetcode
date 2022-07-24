@@ -1,3 +1,4 @@
+// Q2350h, runtime 100.00%
 func shortestSequence(rolls []int, k int) int {
     var m = map[int]bool{}
     var curr, cntCollection int = 0, 0
