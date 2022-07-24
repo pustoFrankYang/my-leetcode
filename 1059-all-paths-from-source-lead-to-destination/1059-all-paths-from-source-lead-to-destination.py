@@ -1,4 +1,4 @@
-# Q1059m, runtime 28.81%
+# Q1059m, runtime 74.34%
 class Solution:
     def leadsToDestination(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
         u2v = defaultdict(list)
