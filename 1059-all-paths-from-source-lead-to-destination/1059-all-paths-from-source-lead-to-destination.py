@@ -1,11 +1,14 @@
+# Q1059m, runtime 28.81%
 class Solution:
     def leadsToDestination(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
         u2v = defaultdict(list)
         for u, v in edges:
             u2v[u].append(v)
         if len(u2v[source]) <= 0:
-            return source == destination  ###???
-        # False when any path has loop or end not in desti
+            ###??? isn't wording misleading?
+            return source == destination  
+        
+        # mark all points unvisited
         vis = {}
         for u in u2v.keys():
             vis[u] = False
@@ -13,6 +16,7 @@ class Solution:
                 vis[v] = False
         
         def dfs(n):
+            # False when any path has loop or end not in desti
             if vis[n]:
                 return False
             vis[n] = True
