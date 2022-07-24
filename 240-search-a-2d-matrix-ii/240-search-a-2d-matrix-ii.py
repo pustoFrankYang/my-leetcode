@@ -1,4 +1,4 @@
-# Q240m, runtime 26.45%
+# Q240m, runtime 33.33%
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         m, n = len(matrix), len(matrix[0])
