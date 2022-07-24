@@ -1,5 +1,5 @@
 // ¡¡¡gesah inr Iter kann move nur Lesser und nicht Greater
-// Q244m, runtime 63.31%
+// Q244m, runtime 94.60%
 class WordDistance {
     
     HashMap<String, ArrayList<Integer>> s2locs;
