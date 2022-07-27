@@ -13,6 +13,7 @@
  *     }
  * }
  */
+// Q114m, runtime 78.58%
 // root.next = left.first
 // left.last = right.first
 // root.first = root
@@ -42,7 +43,6 @@ class Solution {
     } 
     public void flatten(TreeNode root) {
         TreeNode last = flatter(root);
-        // if (last != null) last.right = null;
     }
 }
 
