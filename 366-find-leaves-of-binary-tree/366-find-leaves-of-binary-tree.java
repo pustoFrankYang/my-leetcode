@@ -29,9 +29,9 @@ class Solution {
         int lOrd = rec(root.left);
         int rOrd = rec(root.right);
         int rootOrder = Math.max(lOrd, rOrd) + 1;
-        List<Integer> list = this.ord2nod.getOrDefault(rootOrder, new ArrayList<Integer>());
-        list.add(root.val);
-        this.ord2nod.put(rootOrder, list);
+        if (this.ord2nod.get(rootOrder) == null)
+            this.ord2nod.put(rootOrder, new ArrayList<Integer>());
+        ord2nod.get(rootOrder).add(root.val);
         return rootOrder;
     }
 }
