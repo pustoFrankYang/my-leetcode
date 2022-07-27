@@ -1,4 +1,4 @@
-// Q408e, runtime
+// Q408e, runtime 10.37%
 class Solution {
     public boolean validWordAbbreviation(String word, String abbr) {
         int p = 0, q = 0;
