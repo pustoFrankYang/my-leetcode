@@ -13,6 +13,7 @@
  *     }
  * }
  */
+// Q366m, runtime 100.00%
 class Solution {
     public List<List<Integer>> findLeaves(TreeNode root) {
         this.ord2nod = new HashMap<Integer, List<Integer>>();
