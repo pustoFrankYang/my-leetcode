@@ -18,7 +18,7 @@ class Solution {
     public List<List<Integer>> findLeaves(TreeNode root) {
         this.ord2nod = new HashMap<Integer, List<Integer>>();
         int rootOrder = rec(root);
-        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        List<List<Integer>> ans = new ArrayList<>(); // !!!init can empty templ
         for (int i = 1; i <= rootOrder; i ++) {
             ans.add(this.ord2nod.get(i));
         }
