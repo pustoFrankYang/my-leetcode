@@ -3,19 +3,7 @@
 class Solution {
     int m, n;
     int[][] dirs = new int[][]{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
-    public void propagate(boolean[][] isOcn, Queue<int[]> ocnQ, int[][] heights) {
-        while (!ocnQ.isEmpty()) {
-            int[] curr = ocnQ.poll();
-            for (var dir : dirs) {
-                int nx = curr[0] + dir[0], ny = curr[1] + dir[1];
-                if (nx < 0 || nx >= m || ny < 0 || ny >= n) continue;
-                if (!isOcn[nx][ny] && heights[nx][ny] >= heights[curr[0]][curr[1]]) {
-                    isOcn[nx][ny] = true;
-                    ocnQ.offer(new int[]{nx, ny});
-                }
-            }
-        }
-    }
+    
     public List<List<Integer>> pacificAtlantic(int[][] heights) {
         m = heights.length; n = heights[0].length;
         boolean[][] isPac = new boolean[m][n], isAtl = new boolean[m][n];
@@ -42,5 +30,19 @@ class Solution {
                 if (isPac[i][j] && isAtl[i][j])
                     res.add(List.of(i, j));
         return res;
+    }
+    
+    public void propagate(boolean[][] isOcn, Queue<int[]> ocnQ, int[][] heights) {
+        while (!ocnQ.isEmpty()) {
+            int[] curr = ocnQ.poll();
+            for (var dir : dirs) {
+                int nx = curr[0] + dir[0], ny = curr[1] + dir[1];
+                if (nx < 0 || nx >= m || ny < 0 || ny >= n) continue;
+                if (!isOcn[nx][ny] && heights[nx][ny] >= heights[curr[0]][curr[1]]) {
+                    isOcn[nx][ny] = true;
+                    ocnQ.offer(new int[]{nx, ny});
+                }
+            }
+        }
     }
 }
