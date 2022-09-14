@@ -13,6 +13,7 @@
  *     }
  * }
  */
+// Q1457m, runtime 78.79%, Java
 class Solution {
     // palin means only 0 or 1 of the cnts are odd
     private int[] cnts = new int[10];
