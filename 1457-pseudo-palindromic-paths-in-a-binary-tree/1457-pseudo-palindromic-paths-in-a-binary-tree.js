@@ -11,6 +11,7 @@
  * @return {number}
  */
 // Q1457m, runtime 100.00%, JS
+// the vars must be cleared in main func
 var cnts = [];
 var ans = 0;
 const dfs = (node) => {
