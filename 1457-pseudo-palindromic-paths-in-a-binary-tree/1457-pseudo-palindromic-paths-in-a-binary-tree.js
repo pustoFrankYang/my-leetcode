@@ -10,7 +10,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
-// Q1457m, runtime 48.89%, JS
+// Q1457m, runtime 86.67%, JS
 var cnts = [];
 var ans = 0;
 const dfs = (node) => {
