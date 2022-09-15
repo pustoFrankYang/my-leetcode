@@ -1,4 +1,4 @@
-# Q2007m, runtime 78.62%, py
+# Q2007m, runtime 84.56%, py
 class Solution:
     def findOriginalArray(self, changed: List[int]) -> List[int]:
         ans = []
