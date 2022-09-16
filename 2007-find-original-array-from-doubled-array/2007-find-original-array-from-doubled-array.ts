@@ -1,4 +1,4 @@
-// Q2007m, runtime, TS
+// Q2007m, runtime 88.89%, TS
 function findOriginalArray(changed: number[]): number[] {
     let ans: number[] = []; // soll init
     let cnt = new Map();
