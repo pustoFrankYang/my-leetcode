@@ -1,5 +1,5 @@
 # Note: The python code of top-down DP may give Time Limit Exceeded/Memory Limit Exceeded since it has a larger constant factor.
-# Q1770m, TLE, py
+# Q1770m, TLE or runtime 13.96%, py
 class Solution:
     def maximumScore(self, nums: List[int], multipliers: List[int]) -> int:
         # l + (len (- 1) - r) = op; r = len - 1 - op + l
