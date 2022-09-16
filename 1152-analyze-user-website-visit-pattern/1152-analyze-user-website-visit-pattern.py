@@ -1,4 +1,4 @@
-# Q1152m, runtime 7.09%, py
+# Q1152m, runtime 79.78%, py
 class Solution:
     def mostVisitedPattern(self, username: List[str], timestamp: List[int], website: List[str]) -> List[str]:
         # {pattern -> [usernames]}
