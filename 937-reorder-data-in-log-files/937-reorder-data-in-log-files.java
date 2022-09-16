@@ -1,4 +1,4 @@
-// Q937m, runtime, java
+// Q937m, runtime 12.08%, java
 class Solution {
     public String[] reorderLogFiles(String[] logs) {
         List<String> letlogs = new ArrayList<>(), diglogs = new ArrayList<>();
