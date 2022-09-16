@@ -1,4 +1,4 @@
-// Q1770m, runtime, TS
+// Q1770m, runtime 81.25%, TS
 function maximumScore(nums: number[], multipliers: number[]): number {
     var n = nums.length, m = multipliers.length;
     var dp = [] as number[][];
