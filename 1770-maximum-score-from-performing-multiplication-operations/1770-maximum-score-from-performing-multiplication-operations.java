@@ -1,4 +1,4 @@
-// Q1770m, runtime, java
+// Q1770m, runtime 71.73%, java
 class Solution {
     public int maximumScore(int[] nums, int[] multipliers) {
         int m = multipliers.length, n = nums.length;
