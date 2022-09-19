@@ -1,4 +1,4 @@
-// Q205e, runtime 14.03%, java
+// Q205e, runtime 38.71%, java
 class Solution {
     public boolean isIsomorphic(String s, String t) {
         Map<Character, Character> m = new HashMap<>(), invm = new HashMap<>();
