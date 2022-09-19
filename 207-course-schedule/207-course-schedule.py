@@ -1,13 +1,11 @@
-# Q207m, runtime, py
+# Q207m, runtime 5.00%, py
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         preqs = [set() for _ in range(numCourses)]
-        # cnts = [0] * numCourses
         cnt = 0
         for preq in prerequisites:
             preqs[preq[0]].add(preq[1])
             cnt += 1
-            # cnts[preq[0]] += 1
         q = []
         for i in range(len(preqs)):
             if len(preqs[i]) == 0:
