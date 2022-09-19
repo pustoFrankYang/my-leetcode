@@ -1,4 +1,4 @@
-# Q609m, runtime, py
+# Q609m, runtime 99.83%, py
 class Solution:
     def findDuplicate(self, paths: List[str]) -> List[List[str]]:
         cont2dirs = defaultdict(list)
