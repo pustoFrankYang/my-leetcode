@@ -1,4 +1,4 @@
-# Q207m, runtime 5.00%, py
+# Q207m, runtime 22.96%, py
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         preqs = [set() for _ in range(numCourses)]
