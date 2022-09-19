@@ -4,7 +4,7 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-# Q545m, runtime 10.58%, py
+# Q545m, runtime 86.09%, py
 # !!! leaves should left to right, should DFS
 class Solution:
     def boundaryOfBinaryTree(self, root: Optional[TreeNode]) -> List[int]:
