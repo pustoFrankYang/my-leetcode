@@ -1,3 +1,4 @@
+// Q392e, runtime 91.85%, java
 class Solution {
     public boolean isSubsequence(String s, String t) {
         int p = 0, q = 0;
