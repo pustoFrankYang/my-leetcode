@@ -30,7 +30,7 @@ class Solution:
             if node.isWord: # 在这里加，以防漏掉第一个词
                 ans.append(currstr)
             for kid in node.next:
-                if kid:
+                if kid and len(ans) < 3:
                     ans += dfs(kid, currstr + kid.val)
             return ans
         
