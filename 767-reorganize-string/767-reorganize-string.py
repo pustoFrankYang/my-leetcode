@@ -11,11 +11,11 @@ class Solution:
                 maxid = ord(ch) - ord('a')
         if maxc > (len(s) + 1) // 2:
             return ""
-        ans = " " * len(s)
+        ans = [' '] * len(s)
         isOdd = 0
         p = 0
         for i in range(cnts[maxid]):
-            ans = ans[:2 * p + isOdd] + chr(ord('a') + maxid) + ans[2 * p + isOdd + 1:]
+            ans[2 * p + isOdd] = chr(ord('a') + maxid)
             p += 1
         cnts[maxid] = 0
         for ind in range(26):
@@ -23,6 +23,6 @@ class Solution:
                 if isOdd == 0 and p * 2 >= len(s):
                     isOdd = 1
                     p = 0
-                ans = ans[:2 * p + isOdd] + chr(ord('a') + ind) + ans[2 * p + isOdd + 1:]
+                ans[2 * p + isOdd] = chr(ord('a') + ind)
                 p += 1
-        return ans
+        return ''.join(ans)
