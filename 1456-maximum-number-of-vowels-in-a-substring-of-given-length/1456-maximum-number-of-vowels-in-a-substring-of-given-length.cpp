@@ -1,4 +1,5 @@
 // C++复健, 试 LeetHub
+// Oh, LeetHub only work with OLD ver. LeetCode!!!
 class Solution {
 public:
     bool isVowel(char c) {
