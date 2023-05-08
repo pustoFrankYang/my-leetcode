@@ -5,7 +5,8 @@ public:
         unordered_map<int, int> m{{0, 1}};
         int ans = 0, curr_sum = 0;
         for (auto n : nums) {
-            curr_sum += n + k * 10000;
+            // !! avoid 取余的 negative res 
+            curr_sum += n % k + k;
             curr_sum %= k;
             ans += m[curr_sum]++;
         }
