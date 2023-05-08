@@ -11,7 +11,6 @@ public:
         int curr_sum = 0;
         for (int i = 0; i < nums.size(); i ++) {
             curr_sum = (curr_sum + nums[i]) % k;
-            std::cout << curr_sum << std::endl;
             if (m.find(curr_sum) != m.end()) {
                 if (m[curr_sum] < i - 1) return true;
             } else // don't update the idx when it is already in map!
