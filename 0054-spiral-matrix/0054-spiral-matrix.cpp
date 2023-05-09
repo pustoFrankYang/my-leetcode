@@ -12,7 +12,7 @@ public:
             if (curr >= ans.size()) break;
             for (int c = n - i - 2; c >= i; c --)
                 ans[curr++] = matrix[m - i - 1][c];
-            if (curr >= ans.size()) break;
+            //if (curr >= ans.size()) break;
             for (int r = m - i - 2; r > i; r --)
                 ans[curr++] = matrix[r][i];
         }
