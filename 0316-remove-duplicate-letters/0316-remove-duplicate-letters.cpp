@@ -17,8 +17,10 @@ public:
             if (--cnt[s[i] - 'a'] == 0) // 仲要加其前嘅最小字
                 break;
         }
-        string recurrer = s.substr(posToAdd);
-        recurrer.erase(remove(recurrer.begin(), recurrer.end(), s[posToAdd]), recurrer.end());
+        //string recurrer = s.substr(posToAdd);
+        //recurrer.erase(remove(recurrer.begin(), recurrer.end(), s[posToAdd]), recurrer.end());
+        // C++ 冇 replaceAll，試以 regex
+        string recurrer = std::regex_replace(s.substr(posToAdd), std::regex(string() + s[posToAdd]), string());
         return s[posToAdd] + removeDuplicateLetters(recurrer);
     }
 };
