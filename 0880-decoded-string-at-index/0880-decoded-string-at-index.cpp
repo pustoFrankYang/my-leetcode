@@ -13,11 +13,7 @@ public:
             }
         }
         // backward
-        // if digit, divide currsum daby
-        //   - and k modulo
-        //   - NO!!! k should modulo everywhen. 
-        // if alpha, minus 1
-        // and when currsum == k, getted
+        // emm... lost my mind
         // 唉，到底怎麼思考呢件事？還是用currsum變化嘅各種情況啩
         // 總長度currsum一開始總是大於k嘛
         // 其中（isalpha）稍-1都係大於
