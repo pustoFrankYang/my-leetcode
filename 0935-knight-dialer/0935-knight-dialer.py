@@ -10,6 +10,7 @@ class Solution:
         for _ in range(n - 1):
             new = [0] * 10
             for n in range(10):
-                new[n] = sum([curr[x] * next[n][x] for x in range(10)])
+                # 还真不知道这一步就可以做mod运算了
+                new[n] = sum([curr[x] * next[n][x] for x in range(10)]) % (1000000007)
             curr = new
-        return sum(curr) % (1000000007)
+        return sum(curr)  % (1000000007)
