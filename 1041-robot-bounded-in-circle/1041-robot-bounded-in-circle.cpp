@@ -14,6 +14,7 @@ public:
                         curry += dirs[currdir].second;
                         break;
                     case 'L':
+                        // 记得这里直接减的话取模会取到负数
                         currdir = (currdir - 1 + 4) % 4;
                         break;
                     case 'R':
