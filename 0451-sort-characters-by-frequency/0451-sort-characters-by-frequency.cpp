@@ -17,11 +17,11 @@ public:
             return a.second > b.second;
         });
         
-        string ans = "";
+        stringstream ans;
         for (const auto& cntpair : cntpairs) {
             // for cntpair.second times repeat cntpair.first
-            ans += string(cntpair.second, cntpair.first);
+            ans << string(cntpair.second, cntpair.first);
         }
-        return ans;
+        return ans.str();
     }
 };
