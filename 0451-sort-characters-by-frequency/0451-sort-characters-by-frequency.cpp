@@ -1,16 +1,18 @@
 class Solution {
 public:
     string frequencySort(string s) {
-        unordered_map<char, int> cnt;
+        // use vector of ASCII length to avoid hashmap
+        vector<pair<char, int>> cntpairs(128);
         for (const char& ch : s) {
-            ++cnt[ch];
+            cntpairs[int(ch)].first = ch;
+            ++cntpairs[int(ch)].second;
         }
         
         // change map to vector to facilitate sorting
-        vector<pair<char, int>> cntpairs;
-        for (const auto& kv : cnt) {
-            cntpairs.emplace_back(kv);
-        }
+        // vector<pair<char, int>> cntpairs;
+        // for (const auto& kv : cnt) {
+        //     cntpairs.emplace_back(kv);
+        // }
         
         // sort by cnt from greater to less
         sort(cntpairs.begin(), cntpairs.end(), [](pair<char, int> a, pair<char, int> b){
