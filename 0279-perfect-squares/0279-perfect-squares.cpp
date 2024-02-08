@@ -17,14 +17,10 @@ public:
         
         // remember to init to int-max
         vector<int> dp(n + 1, INT_MAX);
+        dp[0] = 0;
         for (int i = 0; i <= n; ++i) {
-            for (int j = 1; j <= sqrt(i); ++j) {
-                int sq = j * j;
-                if (sq == i) {
-                    dp[i] = 1;
-                } else if (sq < i) {
-                    dp[i] = min(dp[i], 1 + dp[i - sq]);
-                }
+            for (int j = 1; j * j <= i; ++j) {
+                dp[i] = min(dp[i], 1 + dp[i - j * j]);
             }
         }
         
