@@ -16,6 +16,7 @@ public:
         // }
         
         // remember to init to int-max
+        // 为了削减时间做了一些处理。。。包括取消了从 1 到 100 预算一遍 square
         vector<int> dp(n + 1, INT_MAX);
         dp[0] = 0;
         for (int i = 0; i <= n; ++i) {
