@@ -15,14 +15,15 @@ public:
             perfect_squares[i] = i * i;
         }
         
-        vector<int> dp(n + 1);
+        // remember to init to int-max
+        vector<int> dp(n + 1, INT_MAX);
         for (int i = 0; i <= n; ++i) {
             for (int root = 100; root >= 1; --root) {
                 int sq = perfect_squares[root];
                 if (sq == i) {
                     dp[i] = 1;
                 } else if (sq < i) {
-                    dp[i] = dp[i] == 0? dp[sq] + dp[i - sq] : min(dp[i], dp[sq] + dp[i - sq]);
+                    dp[i] = min(dp[i], dp[sq] + dp[i - sq]);
                 }
             }
         }
