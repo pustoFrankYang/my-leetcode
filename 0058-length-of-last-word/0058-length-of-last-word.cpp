@@ -3,10 +3,9 @@ public:
     int lengthOfLastWord(string s) {
         stringstream ss(s);
         string word;
-        string last_word;
         while (ss >> word) {
-            last_word = word;
+            continue;
         }
-        return last_word.size();
+        return word.size();
     }
 };
