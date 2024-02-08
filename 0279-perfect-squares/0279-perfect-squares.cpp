@@ -23,7 +23,7 @@ public:
                 if (sq == i) {
                     dp[i] = 1;
                 } else if (sq < i) {
-                    dp[i] = min(dp[i], dp[sq] + dp[i - sq]);
+                    dp[i] = min(dp[i], 1 + dp[i - sq]);
                 }
             }
         }
