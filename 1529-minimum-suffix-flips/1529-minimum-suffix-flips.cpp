@@ -14,7 +14,7 @@ public:
         
         for (int i = 0; i < target.size() - 1; i++) {
             if (target[i] != target[i + 1]) {
-                ++cntseq;
+                cntseq++;
             }
         }
         return cntseq;
