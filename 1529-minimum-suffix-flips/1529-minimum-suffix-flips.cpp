@@ -2,20 +2,20 @@ class Solution {
 public:
     // 灵机一动竟然还真对了，不错不错
     int minFlips(string target) {
-        int len = target.size();
+        //int len = target.size();
         
         // a continuous sequence of the same digits can be flipped in one run
         // therefore we just count how many differernt such sequences there are
-        int cnt_seq = 1;
+        int cntseq = 1;
         // if first digit is 0, it means the first sequence don't need to be flipped
         // so there is 1 less run
-        if (target[0] == '0') cnt_seq = 0;
+        if (target[0] == '0') cntseq = 0;
         
-        for (int i = 0; i < len - 1; ++i) {
+        for (int i = 0; i < target.size() - 1; ++i) {
             if (target[i] != target[i + 1]) {
-                ++cnt_seq;
+                ++cntseq;
             }
         }
-        return cnt_seq;
+        return cntseq;
     }
 };
