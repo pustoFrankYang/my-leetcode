@@ -11,9 +11,9 @@ public:
         // so there is 1 less run
         if (target[0] == '0') cntseq = 0;
         
-        for (int i = 0; i < target.size() - 1; ++i) {
+        for (int i = 0; i < target.size() - 1; i++) {
             if (target[i] != target[i + 1]) {
-                ++cntseq;
+                cntseq++;
             }
         }
         return cntseq;
