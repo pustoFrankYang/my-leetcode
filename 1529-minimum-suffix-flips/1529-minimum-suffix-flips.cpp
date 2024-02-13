@@ -11,8 +11,8 @@ public:
         // so there is 1 less run
         if (target[0] == '0') --cnt_seq;
         
-        for (int i = 1; i < len; ++i) {
-            if (target[i] != target[i - 1]) {
+        for (int i = 0; i < len - 1; ++i) {
+            if (target[i] != target[i + 1]) {
                 ++cnt_seq;
             }
         }
