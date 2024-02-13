@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // 灵机一动竟然还真对了，不错不错
     int minFlips(string target) {
         int len = target.size();
         char prev = ' ';
