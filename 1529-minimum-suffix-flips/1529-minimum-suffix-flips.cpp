@@ -1,6 +1,7 @@
 class Solution {
 public:
     // 灵机一动竟然还真对了，不错不错
+    // 我在这里试验随机改程序某个地方，怎么能让程序运行更快。。。。好像是玄学？
     int minFlips(string target) {
         //int len = target.size();
         
@@ -13,7 +14,7 @@ public:
         
         for (int i = 0; i < target.size() - 1; i++) {
             if (target[i] != target[i + 1]) {
-                cntseq++;
+                ++cntseq;
             }
         }
         return cntseq;
