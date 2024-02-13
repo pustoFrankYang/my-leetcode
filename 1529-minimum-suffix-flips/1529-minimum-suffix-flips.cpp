@@ -12,7 +12,7 @@ public:
         // so there is 1 less run
         if (target[0] == '0') --cnt_continuous_digits;
         
-        for (int i = len - 1; i >= 0; --i) {
+        for (int i = 0; i < len; ++i) {
             if (target[i] != prev) {
                 ++cnt_continuous_digits;
                 prev = target[i];
