@@ -9,7 +9,7 @@ public:
         int cnt_seq = 1;
         // if first digit is 0, it means the first sequence don't need to be flipped
         // so there is 1 less run
-        if (target[0] == '0') --cnt_seq;
+        if (target[0] == '0') cnt_seq = 0;
         
         for (int i = 0; i < len - 1; ++i) {
             if (target[i] != target[i + 1]) {
