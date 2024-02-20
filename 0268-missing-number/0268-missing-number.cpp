@@ -1,13 +1,15 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        vector<bool> has(nums.size() + 1);
-        for (int i = 0; i < nums.size(); i ++) {
-            has[nums[i]] = true;
+        // how to approach with bit manipulation?
+        // we know: if there are 0-n 0-n with one x missing
+        // then the 2n+1 numbers XOR each other
+        // and here, the corresponding is index 0~n-1 and 0,n with x missing
+        
+        int x = nums.size();
+        for (int i = 0; i < nums.size(); i++) {
+            x = (i ^ nums[i]) ^ x;
         }
-        for (int i = 0; i <= nums.size(); i ++) {
-            if (!has[i]) return i;
-        }
-        return 0;
+        return x;
     }
 };
